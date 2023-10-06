@@ -9,13 +9,11 @@ import { createTaskService, deleteTaskService, getAllTasksService, updateTaskSer
 const Home = () => {
     const [tasks, setTask] = useState<TaskType[]>([]);
     const [updatingTask, setUpdatingTask] = useState<TaskType | undefined>();
-    const [change, setChange] = useState<boolean>(false);
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
     const fetchTasks = async () => {
         const tasks = await getAllTasksService();
         setTask(tasks);
-        setChange(false);
     };
 
     const addTask = (e : any) => {
@@ -31,7 +29,6 @@ const Home = () => {
             createTaskService(newTask);
             setTask([...tasks, newTask]);
             setIsOpen(false);
-            setChange(true);
         }else{
             alert("Please write a title and description");
         }

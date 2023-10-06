@@ -10,6 +10,8 @@ Se usan las diferentes tecnologias y paquetes:
 * Axios
 * Style Components
 * TypeScript
+* react-tooltip
+* react-modal
 
 ## Ejecucion
 
